@@ -1,9 +1,6 @@
 /* eslint-disable import/no-anonymous-default-export */
 import {  createStore } from 'redux';
 import MemberReducer from '../reducer/MemberReducer';
-// import createSagaMiddleware from 'redux-saga'
-
-// const sagaMiddleware = createSagaMiddleware()
 
 export default () => {
     const store = createStore(
@@ -12,4 +9,3 @@ export default () => {
     );
     return store;
 }
-//,applyMiddleware(sagaMiddleware)

@@ -1,16 +1,15 @@
 //Default member
 const MemberReducerDefaultState = {
     members: []
-}
+};
 
-let MemberReducer = (state = MemberReducerDefaultState, action) => {
+// eslint-disable-next-line import/no-anonymous-default-export
+export default (state = MemberReducerDefaultState, action) => {
     switch (action.type) {
         case "ADD_MEMBERS":
-            return { members: [...action.payload.members] };
-        case "GET_MEMBERS":
-            return [state.members];
+            return { members: [...action.members] };
+        
         default:
-            return state;
+            return [...state];
     }
 };
-export default MemberReducer;
