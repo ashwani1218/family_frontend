@@ -10,6 +10,6 @@ export default (state = MemberReducerDefaultState, action) => {
             return { members: [...action.members] };
         
         default:
-            return [...state];
+            return state;
     }
 };

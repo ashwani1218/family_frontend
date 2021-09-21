@@ -1,11 +1,8 @@
 /* eslint-disable import/no-anonymous-default-export */
-import {  createStore } from 'redux';
+import { createStore } from 'redux';
 import MemberReducer from '../reducer/MemberReducer';
 
-export default () => {
-    const store = createStore(
-        MemberReducer,
-        window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-    );
-    return store;
-}
+export default createStore(
+    MemberReducer,
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);

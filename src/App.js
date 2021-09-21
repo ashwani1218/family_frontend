@@ -1,19 +1,19 @@
 import * as React from "react"
 import { ChakraProvider } from "@chakra-ui/react"
-import AppRouter from "./Routers/AppRouter";
+import AppRouter from "./Route/AppRouter";
 import { Provider } from "react-redux";
 import store from "./redux/store/ConfigureStore"
 
 class App extends React.Component {
   render() {
     return (
-    <ChakraProvider>
+      <ChakraProvider>
         <div className="App">
           <Provider store={store}>
-          <AppRouter />
+            <AppRouter />
           </Provider>
         </div>
-    </ChakraProvider>
+      </ChakraProvider>
     )
   }
 }
