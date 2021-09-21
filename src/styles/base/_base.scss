@@ -1,0 +1,39 @@
+html {
+    font-size: 62.5%;
+    height: 100%;
+    width: 100%;
+  }
+  html,
+  body,
+  #app,
+  #app > div {
+    height: 100%;
+  }
+  body {
+    // background-color: $dark-blue;
+    height: 100%;
+    width: 100%;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: $m-size;
+  }
+  
+  button {
+    cursor: pointer;
+  }
+  
+  button:disabled {
+    cursor: default;
+  }
+  
+  .App {
+    height: 100%;
+    width: 100%;
+  }
+  .root {
+    height: 100%;
+    width: 100%;
+  }
+  .home {
+    height: 100%;
+    width: 100%;
+  }
