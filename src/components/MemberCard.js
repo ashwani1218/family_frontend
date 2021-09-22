@@ -5,13 +5,14 @@ import { NavLink } from 'react-router-dom';
 const MemberCard = (props) => {
 
     const memberList = props.members.map((member) => {
-        const firstName = member.firstName;
+        const id = member.id;
         return(
         <NavLink to={{
-            pathname: '/member/'+firstName,
+            pathname: '/member/'+id,
             member
-        }} key={member.firstName}>
+        }} key={member.id}>
             <Box
+                bg = "gray.300"
                 display="flex"
                 alignItems="center"
                 justifyContent="center"
@@ -20,7 +21,7 @@ const MemberCard = (props) => {
                 boxShadow="dark-lg"
                 p="6"
                 rounded="md"
-                bg="white"
+                
             >
                 {member.firstName} {member.lastName}
             </Box>
@@ -31,7 +32,7 @@ const MemberCard = (props) => {
         <Grid
             templateColumns="repeat(3, 1fr)" gap={6}
             maxHeight="500"
-            bg="gray.10"
+            bg="gray.100"
             columns={4}
             spacing="10"
             p="10"

@@ -9,7 +9,7 @@ const AppRouter = () => (
         <div className="page-container">
           <Switch>
           <Route path="/" exact={true} component={Home} />
-          <Route path="/member/:firstname" exact={true} component={MemberProfile} />
+          <Route path="/member/:id" exact={true} component={MemberProfile} />
           </Switch>
         </div>
       </BrowserRouter>

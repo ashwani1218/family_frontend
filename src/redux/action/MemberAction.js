@@ -1,14 +1,19 @@
-export const addMember = ({
-  firstName="",
-  lastName="",
-  id=""
-} = {} ) => {
+export const addMembers = (members) => {
+  return {
+    type: "ADD_MEMBERS",
+    members
+  }
+};
+
+export const addMember = (
+  { id = "",
+    firstName = "",
+    lastName = ""
+  } = {}) => {
   return {
     type: "ADD_MEMBER",
     member: {
-      id,
-      firstName,
-      lastName,
+      id,firstName,lastName
     }
   }
-};
+}

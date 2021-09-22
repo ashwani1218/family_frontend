@@ -1,21 +1,14 @@
-<<<<<<< Updated upstream
-/* eslint-disable import/no-anonymous-default-export */
-import { createStore } from 'redux';
-import MemberReducer from '../reducer/MemberReducer';
 
-export default createStore(
-    MemberReducer,
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-);
-=======
-
-import {  createStore } from 'redux';
+import {  createStore,combineReducers } from 'redux';
 import MemberReducer from '../reducer/MemberReducer';
+import MembersReducer from '../reducer/MembersReducer';
 
 export default  createStore(
-        MemberReducer,
+    combineReducers({
+        member: MemberReducer,
+        members: MembersReducer
+    }),
         window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
     );
 
 
->>>>>>> Stashed changes
