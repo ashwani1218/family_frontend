@@ -4,7 +4,8 @@ import {connect} from 'react-redux'
 import { axios } from '../Axios';
 import { addMember } from '../redux/action/MemberAction';
 import { useParams } from 'react-router-dom';
-import { Flex, Heading } from "@chakra-ui/react";
+import { Flex, Heading,Container, IconButton,HamburgerIcon} from "@chakra-ui/react";
+import Document from '../components/Document';
 
 const MemberProfile = (props) => {
 
@@ -38,10 +39,18 @@ const MemberProfile = (props) => {
 
     return(
         <div className="MemberProfile">
-            <div className="Header" borderRadius="100px">
-                <Flex bg = "gray.200" rounded="md" justifyContent="center" align="center" p={10}>
+            <div className="Header" background="grey">
+            
+            <Container>
+                <Flex rounded="md" justifyContent="center" align="center" p={10}>
                     <Heading>Member: {member.firstName}</Heading>
                 </Flex>
+            </Container>
+            </div>
+            
+            <div className="Documents">
+               
+                <Document documents={documents} />
             </div>
         </div>
     )

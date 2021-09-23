@@ -34,7 +34,7 @@ const Home = (props) => {
                     <Heading>Family</Heading>
                 </Flex>
             </div>
-            <div className="members" background-color="#EDF2F7">
+            <div className="members">
                 <MemberCard members={members} />
             </div>    
         </div>
