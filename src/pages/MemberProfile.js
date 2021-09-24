@@ -6,6 +6,9 @@ import { addMember } from "../redux/action/MemberAction";
 import { useParams } from "react-router-dom";
 import { Flex, Heading, Container } from "@chakra-ui/react";
 import Document from "../components/Document";
+import { NavLink } from "react-router-dom";
+import { Button } from "antd";
+import { PlusOutlined } from "@ant-design/icons";
 
 const MemberProfile = (props) => {
   const [documents, setDocument] = useState([]);
@@ -46,11 +49,25 @@ const MemberProfile = (props) => {
       <div className="Header" background="grey">
         <Container>
           <Flex rounded="md" justifyContent="center" align="center" p={10}>
-            <Heading>Member: {member.firstName}</Heading>
+            <Heading>
+              {member.firstName} {member.lastName}
+            </Heading>
           </Flex>
         </Container>
       </div>
-
+      <div className="Header">
+        <Flex bg="gray.300" justifyContent="space-between" p={10} rounded="3xl">
+          <Heading>Documents</Heading>
+          <NavLink to="/addDocument">
+            <Button
+              type="primary"
+              shape="round"
+              icon={<PlusOutlined />}
+              size={"large"}
+            ></Button>
+          </NavLink>
+        </Flex>
+      </div>
       <div className="Documents">
         <Document documents={documents} />
       </div>
