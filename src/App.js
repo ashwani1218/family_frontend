@@ -3,7 +3,8 @@ import "./styles/styles.scss"
 import { ChakraProvider } from "@chakra-ui/react"
 import AppRouter from "./Route/AppRouter";
 import { Provider } from "react-redux";
-import store from "./redux/store/ConfigureStore"
+import store from "./redux/store/ConfigureStore";
+import 'antd/dist/antd.css';
 
 class App extends React.Component {
   render() {

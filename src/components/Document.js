@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Grid,Divider } from "@chakra-ui/react";
+import { Box, Grid, Divider } from "@chakra-ui/react";
 
 const Document = (props) => {
 
@@ -11,21 +11,22 @@ const Document = (props) => {
                 alignItems="center"
                 justifyContent="center"
                 w="100%"
-                h="100"
+                h="100%"
                 boxShadow="dark-lg"
                 p="6"
                 rounded="md"
-                
             >
                 {document.documentTitle}
-                Type: {document.particular.type}
-
+                <br />
+                {document.particular.type}
+                
             </Box>
+            
         )
     })
     return (<div>
         <Box bg="gray.100">
-            Documents:
+            
         </Box>
         <Divider bg="black.300" orientation="horizontal"  />
         <Grid
@@ -43,6 +44,24 @@ const Document = (props) => {
                 {DocCard}
         </Grid>
         </div>
+    )
+}
+
+const unUsed = () => {
+    return (
+        <Box
+        bg = "gray.300"
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
+        w="100%"
+        h="100"
+        boxShadow="dark-lg"
+        p="6"
+        rounded="md"
+        borderWidth="1px" borderRadius="lg" overflow="hidden"
+        
+    ></Box>
     )
 }
 
