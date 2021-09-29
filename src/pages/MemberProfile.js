@@ -14,6 +14,7 @@ const MemberProfile = (props) => {
   const [documents, setDocument] = useState([]);
   const [member, setMember] = useState({ id: "", firstName: "", lastName: "" });
   let { id } = useParams();
+  const docUrl = `/${id}/addDocument`;
 
   useEffect(() => {
     const persistMember = () => {
@@ -58,13 +59,13 @@ const MemberProfile = (props) => {
       <div className="Header">
         <Flex bg="gray.300" justifyContent="space-between" p={10} rounded="3xl">
           <Heading>Documents</Heading>
-          <NavLink to="/addDocument">
+          <NavLink to={docUrl}>
             <Button
               type="primary"
               shape="round"
               icon={<PlusOutlined />}
               size={"large"}
-            ></Button>
+            />
           </NavLink>
         </Flex>
       </div>

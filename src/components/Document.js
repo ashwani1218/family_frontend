@@ -14,6 +14,7 @@ const Document = (props) => {
         boxShadow="dark-lg"
         p="6"
         rounded="md"
+        key={document.id}
       >
         {document.documentTitle}
         <br />
