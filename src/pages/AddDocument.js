@@ -1,8 +1,6 @@
 import React from "react";
 import { axios } from "../Axios";
 import { useState, useEffect } from "react";
-import TextField from "@mui/material/TextField";
-import Autocomplete from "@mui/material/Autocomplete";
 import { useParams } from "react-router-dom";
 import { connect } from "react-redux";
 import { Flex, Heading } from "@chakra-ui/react";
@@ -44,6 +42,7 @@ const AddDocument = (props) => {
     console.log(options);
   }, []);
 
+  //Implement using formik for validation of fields
   return (
     <div>
       <div className="Header">
@@ -57,7 +56,9 @@ const AddDocument = (props) => {
           <Heading>Add Document: {member.firstName}</Heading>
         </Flex>
       </div>
-      <div></div>
+      <div>
+        <form></form>
+      </div>
     </div>
   );
 };
