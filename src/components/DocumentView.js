@@ -1,8 +1,10 @@
 import React from "react";
 import { Box, Grid, Divider } from "@chakra-ui/react";
 
-const Document = (props) => {
-  const DocCard = props.documents.map((document) => {
+const DocumentView = (props) => {
+  const DocCard = props.documents.map((doc) => {
+    const id = doc.id;
+
     return (
       <Box
         bg="gray.300"
@@ -10,24 +12,22 @@ const Document = (props) => {
         alignItems="center"
         justifyContent="center"
         w="100%"
-        h="100%"
+        h="100"
         boxShadow="dark-lg"
         p="6"
         rounded="md"
-        key={document.id}
+        key={doc.id}
       >
-        {document.documentTitle}
-        <br />
-        {document.particular.type}
+        {doc.documentTitle}
       </Box>
     );
   });
+
   return (
     <div>
-      <Box bg="gray.100"></Box>
       <Divider bg="black.300" orientation="horizontal" />
       <Grid
-        templateColumns="repeat(3, 1fr)"
+        templateColumns="repeat(4, 1fr)"
         gap={6}
         maxHeight="500"
         bg="gray.100"
@@ -45,4 +45,4 @@ const Document = (props) => {
   );
 };
 
-export default Document;
+export default DocumentView;

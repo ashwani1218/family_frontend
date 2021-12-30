@@ -15,7 +15,7 @@ const Home = (props) => {
   useEffect(() => {
     const getMembers = () => {
       axios
-        .get("/members")
+        .get("/member")
         .catch((err) => {
           console.error(err);
         })

@@ -23,7 +23,7 @@ const AddDocument = (props) => {
         console.log(err);
       });
     axios
-      .get("/documentTypes")
+      .get("/document/type")
       .then((response) => {
         if (response.data.response_code === "200") {
           setDocTypes(() => response.data.document_types);
@@ -53,11 +53,11 @@ const AddDocument = (props) => {
           rounded="3xl"
           p={10}
         >
-          <Heading>Add Document: {member.firstName}</Heading>
+          <Heading>Add Document</Heading>
         </Flex>
-      </div>
-      <div>
-        <form></form>
+        <div className="addDocument">
+          <Heading>{member.firstName}</Heading>
+        </div>
       </div>
     </div>
   );

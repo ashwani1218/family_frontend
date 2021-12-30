@@ -5,13 +5,14 @@ import { axios } from "../Axios";
 import { addMember } from "../redux/action/MemberAction";
 import { useParams } from "react-router-dom";
 import { Flex, Heading, Container } from "@chakra-ui/react";
-import Document from "../components/Document";
+import DocumentView from "../components/DocumentView";
 import { NavLink } from "react-router-dom";
 import { Button } from "antd";
 import { PlusOutlined } from "@ant-design/icons";
 
 const MemberProfile = (props) => {
   const [documents, setDocument] = useState([]);
+  const [isFetched, setIsFetched] = useState(false);
   const [member, setMember] = useState({ id: "", firstName: "", lastName: "" });
   let { id } = useParams();
   const docUrl = `/${id}/addDocument`;
@@ -21,15 +22,16 @@ const MemberProfile = (props) => {
       axios
         .get("/member/" + id)
         .then((response) => {
-          if (response && response.data) {
+          if (response.data.status === "SUCCESS") {
             let familyMember = response.data.familyMember;
             setMember(() => familyMember);
             props.dispatch(addMember(familyMember));
             axios
-              .post("/getDocuments", { holder: familyMember.id })
+              .post("/member/getDocuments", { holder: familyMember.id })
               .then((response) => {
-                if (response.data) {
-                  setDocument(response.data.member_documents);
+                if (response.data.status === "SUCCESS") {
+                  setDocument(() => [...response.data.member_documents]);
+                  setIsFetched(() => true);
                 }
                 console.log(documents);
               })
@@ -69,9 +71,11 @@ const MemberProfile = (props) => {
           </NavLink>
         </Flex>
       </div>
-      <div className="Documents">
-        <Document documents={documents} />
-      </div>
+      {isFetched && (
+        <div className="Documents">
+          <DocumentView documents={documents} />
+        </div>
+      )}
     </div>
   );
 };

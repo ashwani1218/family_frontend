@@ -46,7 +46,7 @@ const AddMember = (props) => {
                 let first_name = request.first_name;
                 let last_name = request.last_name;
                 axios
-                  .post("/addMember", { first_name, last_name })
+                  .post("/member", { first_name, last_name })
                   .then((response) => {
                     console.log(response);
                     if (response.data.response_code === "200") {
